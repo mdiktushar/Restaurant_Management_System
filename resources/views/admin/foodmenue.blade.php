@@ -11,7 +11,7 @@
     @include('admin.navbar')
 
     <!-- body -->
-    <div style="position: relative; top: 60px; right: -150px;">
+    <div style="position: relative; top: 60px; right: -100px;">
         <form action="{{url('/uploadfood')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div>
@@ -47,7 +47,7 @@
                 <th style="padding: 30px; border: 1px solid black;">Data of Adding</th>
                 <th style="padding: 30px; border: 1px solid black;">Description</th>
                 <th style="padding: 30px; border: 1px solid black;">Action</th>
-
+                <th style="padding: 30px; border: 1px solid black;">Action-2</th>
             </tr>
 
 
@@ -60,6 +60,7 @@
                 <td style="border: 1px solid black;">{{$data->created_at}}</td>
                 <td style="border: 1px solid black;">{{$data->description}}</td>
                 <td style="border: 1px solid black;"><a href="{{url('/deletemenue', $data->id)}}">Delete</a></td>
+                <td style="border: 1px solid black;"><a href="{{url('/updatemenue', $data->id)}}">Update</a></td>
             </tr>
 
             @endforeach
@@ -67,7 +68,6 @@
         <br><br><br><br><br><br><br><br><br><br><br><br>
     </div>
 
-    </div>
     <!-- js -->
     @include('admin.adminjs')
 
