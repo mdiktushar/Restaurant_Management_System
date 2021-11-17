@@ -38,8 +38,34 @@
                 <input style="color:black" type="submit" value="Save">
             </div>
         </form>
-    </div>
+        <br><br>
+        <table bgcolor="#767575" style="border: 1px solid black;">
+            <tr align="center" style="color: black">
+                <th style="padding: 30px; border: 1px solid black;">Image</th>
+                <th style="padding: 30px; border: 1px solid black;">Food Name</th>
+                <th style="padding: 30px; border: 1px solid black;">Price</th>
+                <th style="padding: 30px; border: 1px solid black;">Data of Adding</th>
+                <th style="padding: 30px; border: 1px solid black;">Description</th>
+                <th style="padding: 30px; border: 1px solid black;">Action</th>
 
+            </tr>
+
+
+            @foreach($data as $data)
+            <tr align="center">
+                <td style="border: 1px solid black;"><img src="/foodimage/{{$data->image}}" 
+                alt="{{$data->title}}" width="50" height="50"></td>
+                <td style="border: 1px solid black;">{{$data->title}}</td>
+                <td style="border: 1px solid black;">{{$data->price}}</td>
+                <td style="border: 1px solid black;">{{$data->created_at}}</td>
+                <td style="border: 1px solid black;">{{$data->description}}</td>
+                <td style="border: 1px solid black;"><a href="{{url('/deletemenue', $data->id)}}">Delete</a></td>
+            </tr>
+
+            @endforeach
+        </table>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
 
     </div>
     <!-- js -->

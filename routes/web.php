@@ -30,3 +30,5 @@ Route::get('/users',[AdminController::class, 'user']);
 Route::get('/deleteuser/{id}',[AdminController::class, 'delete']);
 Route::get('/foodmenue',[AdminController::class, 'foodmenue']);
 Route::post('/uploadfood',[AdminController::class, 'upload']);
+
+Route::get('/deletemenue/{id}',[AdminController::class, 'deletemenue']);
