@@ -38,4 +38,5 @@ Route::post('/update/{id}',[AdminController::class, 'update']);
 Route::post('/reservation',[AdminController::class, 'reservation']);
 Route::get('/viewreservations', [AdminController::class, 'viewreservations']);
 
-
+Route::get('/viewchef', [AdminController::class, 'viewchef']);
+Route::post('/uploadchef', [AdminController::class, 'uploadchef']);
