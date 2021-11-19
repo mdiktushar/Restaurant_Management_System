@@ -40,3 +40,7 @@ Route::get('/viewreservations', [AdminController::class, 'viewreservations']);
 
 Route::get('/viewchef', [AdminController::class, 'viewchef']);
 Route::post('/uploadchef', [AdminController::class, 'uploadchef']);
+
+Route::get('/deletechef/{id}', [AdminController::class, 'deletechef']);
+Route::get('/updatechef/{id}', [AdminController::class, 'updatechef']);
+Route::post('/chefdataupdate/{id}', [AdminController::class, 'chefdataupdate']);

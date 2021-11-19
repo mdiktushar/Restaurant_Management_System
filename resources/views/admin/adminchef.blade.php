@@ -3,6 +3,16 @@
   <head>
     <!-- css -->
     @include('admin.admincss')
+
+    <style>
+        .th {
+            padding: 30px; 
+            border: 1px solid black;
+        }
+        .tb {
+            border: 1px solid black;
+        }
+    </style>
   </head>
   <body>
     <!-- Navbar -->
@@ -46,6 +56,36 @@
             </div>
 
         </form>
+
+        <br><br>
+
+        <table bgcolor="gray">
+            <tr>
+                <th class="th">Image</th>
+                <th class="th">Name</th>
+                <th class="th">Speciality</th>
+                <th class="th">Facebook</th>
+                <th class="th">Twitter</th>
+                <th class="th">Instagram</th>
+                <th class="th">Action-1</th>
+                <th class="th">Action-2</th>
+            </tr>
+
+            @foreach($data as $data)
+            <tr align="center">
+                <td class="tb"><img src="" alt="" srcset="/chefimage/{{$data->image}}" 
+                alt="{{$data->name}}" width="50" height="50"></td>
+                <td class="tb">{{$data->name}}</td>
+                <td class="tb">{{$data->speciality}}</td>
+                <td class="tb">{{$data->facebook}}</td>
+                <td class="tb">{{$data->twitter}}</td>
+                <td class="tb">{{$data->instagram}}</td>
+                <td class="tb"><a href="{{url('/updatechef', $data->id)}}">Update</a></td>
+                <td class="tb"><a href="{{url('/deletechef', $data->id)}}">Delete</a></td>
+            </tr>
+            @endforeach
+        </table>
+        <br><br><br><br>
 
 
     <!-- body -->

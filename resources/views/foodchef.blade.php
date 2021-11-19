@@ -8,8 +8,9 @@
                     </div>
                 </div>
             </div>
-            @foreach ($data2 as $data)
+           
             <div class="row">
+            @foreach ($data2 as $data)
                 <div class="col-lg-4">
                     <div class="chef-item">
                         <div class="thumb">
@@ -19,7 +20,8 @@
                                 <li><a href="{{url('$data->twitter')}}"><i class="fa fa-twitter"></i></a></li>
                                 <li><a href="{{url('$data->instagram')}}"><i class="fa fa-instagram"></i></a></li>
                             </ul>
-                            <img src="/chefimage/{{$data->image}}" alt="">
+                            <img src="/chefimage/{{$data->image}}" alt=""
+                            hight = 200 width=200>
                         </div>
                         <div class="down-content">
                             <h4>{{$data->name}}</h4>
@@ -27,7 +29,8 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
+            
         </div>
     </section>
