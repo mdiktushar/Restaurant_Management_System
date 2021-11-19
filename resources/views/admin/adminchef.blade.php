@@ -86,8 +86,6 @@
             @endforeach
         </table>
         <br><br><br><br>
-
-
     <!-- body -->
     </div>
     <!-- js -->
