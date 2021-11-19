@@ -25,6 +25,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('redirects',[HomeController::class, 'redirects']);
+Route::post('addcard/{id}',[HomeController::class, 'addcard']);
 
 Route::get('/users',[AdminController::class, 'user']);
 Route::get('/deleteuser/{id}',[AdminController::class, 'delete']);
