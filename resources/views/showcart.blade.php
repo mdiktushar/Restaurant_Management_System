@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <title>Klassy Cafe - Restaurant HTML Template</title>
 
     <style>
@@ -154,15 +154,14 @@
                 @foreach ($data as $data)
                     <tr align = 'center'>
                         <td class='tb'>{{$data->title}}</td>
-                        <td class='tb'>{{$data->price}}</td>
+                        <td class='tb'>{{$data->price}}$</td>
                         <td class='tb'>{{$data->quantity}}</td>
 
                         
                     </td>
-                    </tr>
                 @endforeach
-
-                @foreach ($data2 as $data2)
+            </tr>
+            @foreach ($data2 as $data2)
                 
                 <tr style = "position: relative; top: -35px; right: -380px">
                     <td >
@@ -173,11 +172,32 @@
                     </td>
                 </tr>
 
-                @endforeach
-            
-
+            @endforeach
         </table>
 
+        <div align = "center" style="padding: 10px">
+            <button class="btn btn-primary" id='order'>Order Now</button>
+
+        </div>
+
+        <div align = "center" style="padding: 10px; display: none" id='appear'>
+            <div style="padding: 10px">
+                <label for="">Name</label>
+                <input type="text" name="name" placeholder="name">
+            </div>
+
+            <div style="padding: 10px">
+                <label for="">Phone</label>
+                <input type="number" name="number" placeholder="Pnone Number">
+            </div>
+            <div style="padding: 10px">
+                <label for="">Address</label>
+                <input type="text" name="address" placeholder="Address">
+            </div>
+
+            <input class = "btn btn-success" type="submit" value="Order Confirm" style = "padding: 10px">
+            <input id="cancel" class = "btn btn-danger" type="submit" value="Cancel" style = "padding: 10px">
+        </div>
     </div>
 
 
@@ -211,8 +231,25 @@
         </div>
     </footer>
 
+    <script type="text/javascript">
+        $("#order").click(
+            () => {
+                $("#appear").show();
+            }
+        );
+
+        $('#cancel').click(
+            () => {
+                $("#appear").hide();
+            }
+        )
+    </script>
+
+
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+
 
     <!-- Bootstrap -->
     <script src="assets/js/popper.js"></script>
