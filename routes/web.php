@@ -47,3 +47,4 @@ Route::get('/updatechef/{id}', [AdminController::class, 'updatechef']);
 Route::post('/chefdataupdate/{id}', [AdminController::class, 'chefdataupdate']);
 
 Route::get('/showcart/{id}', [HomeController::class, 'showcart']);
+Route::get('/remove/{id}', [HomeController::class, 'remove']);

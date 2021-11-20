@@ -149,23 +149,36 @@
                 <th class='th'>Food Name</th>
                 <th class='th'>Price</th>
                 <th class='th'>Quantity</th>
+                <th style = "padding: 30px; ">Action</th>
             </tr>
-            @foreach ($data as $data)
-                <tr align = 'center'>
-                    <td class='tb'>{{$data->title}}</td>
-                    <td class='tb'>{{$data->price}}</td>
-                    <td class='tb'>{{$data->quantity}}</td>
+                @foreach ($data as $data)
+                    <tr align = 'center'>
+                        <td class='tb'>{{$data->title}}</td>
+                        <td class='tb'>{{$data->price}}</td>
+                        <td class='tb'>{{$data->quantity}}</td>
+
+                        
+                    </td>
+                    </tr>
+                @endforeach
+
+                @foreach ($data2 as $data2)
+                
+                <tr style = "position: relative; top: -35px; right: -380px">
+                    <td >
+                        <a class="btn btn-wrning" 
+                        href="{{url('/remove',$data2->id)}}">
+                            Remove
+                        </a>
+                    </td>
                 </tr>
-            @endforeach
+
+                @endforeach
+            
+
         </table>
 
     </div>
-
-
-
-
-
-
 
 
        <!-- ***** Footer Start ***** -->
