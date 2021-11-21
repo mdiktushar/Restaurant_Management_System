@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Food;
 use App\Models\Reservation;
 use App\Models\FoodChef;
+use App\Models\Order;
 
 class AdminController extends Controller
 {
@@ -166,5 +167,21 @@ class AdminController extends Controller
         $data->instagram = $request->instagram;
         $data->save();
         return redirect()->back();
+    }
+
+    public function orders(Type $var = null)
+    {
+        # code...
+        $data=order::all();
+
+        return view('admin.orders', compact('data'));
+    }
+
+    public function serach(Request $request)
+    {
+        # code...
+        $search = $request->search;
+        $data = order::where('name', 'Like', '%'.$search.'%')->get();
+        return view('admin.orders', compact('data'));
     }
 }

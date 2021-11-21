@@ -49,3 +49,5 @@ Route::post('/chefdataupdate/{id}', [AdminController::class, 'chefdataupdate']);
 Route::get('/showcart/{id}', [HomeController::class, 'showcart']);
 Route::get('/remove/{id}', [HomeController::class, 'remove']);
 Route::post('/orderconfirm', [HomeController::class, 'orderconfirm']);
+Route::get('/orders', [AdminController::class, 'orders']);
+Route::get('/serach', [AdminController::class, 'serach']);

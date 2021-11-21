@@ -81,11 +81,12 @@ class HomeController extends Controller
         # code...
         foreach($request->foodname as $key => $foodname){
             $data = new order;
+            $data->foodname = $request->foodname[$key];
             $data->price = $request->price[$key];
             $data->quantity = $request->quantity[$key];
             $data->name = $request->name;
             $data->address = $request->address;
-            $data->phone = $request->phone;
+            $data->phone = $request->number;
 
             $data->save();
 
