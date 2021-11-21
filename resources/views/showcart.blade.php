@@ -146,16 +146,30 @@
   
         <table align = 'center'>
             <tr>
-                <th class='th'>Food Name</th>
-                <th class='th'>Price</th>
-                <th class='th'>Quantity</th>
+                <th >Food Name</th>
+                <th >Price</th>
+                <th >Quantity</th>
                 <th style = "padding: 30px; ">Action</th>
             </tr>
+            <form action="{{url('orderconfirm')}}" method="POST">
+                @csrf
                 @foreach ($data as $data)
                     <tr align = 'center'>
-                        <td class='tb'>{{$data->title}}</td>
-                        <td class='tb'>{{$data->price}}$</td>
-                        <td class='tb'>{{$data->quantity}}</td>
+                       <td >
+                        <input type="text" name="foodname[]" value="{{$data->title}}" hidden>
+                        
+                            {{$data->title}}
+                        </td>
+                        
+                        <td >
+                            <input type="text" name="price[]" value="{{$data->price}}" hidden>
+                            {{$data->price}}$
+                        </td>
+                        
+                        <td >
+                        <input type="text" name="quantity[]" value="{{$data->quantity}}" hidden>
+                            {{$data->quantity}}
+                        </td>
 
                         
                     </td>
@@ -163,7 +177,7 @@
             </tr>
             @foreach ($data2 as $data2)
                 
-                <tr style = "position: relative; top: -35px; right: -380px">
+                <tr style = "position: relative; top: -80px; right: -600px">
                     <td >
                         <a class="btn btn-wrning" 
                         href="{{url('/remove',$data2->id)}}">
@@ -176,7 +190,7 @@
         </table>
 
         <div align = "center" style="padding: 10px">
-            <button class="btn btn-primary" id='order'>Order Now</button>
+            <button class="btn btn-primary" type="button" id='order'>Order Now</button>
 
         </div>
 
@@ -199,6 +213,8 @@
             <input id="cancel" class = "btn btn-danger" type="submit" value="Cancel" style = "padding: 10px">
         </div>
     </div>
+
+    </form>
 
 
        <!-- ***** Footer Start ***** -->
